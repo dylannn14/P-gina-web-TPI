@@ -1,0 +1,188 @@
+* {
+    font-family: 'Roboto Mono' , monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: none;
+    list-style: none;
+    color: white;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh;
+    z-index: 100;
+}
+
+header {
+    background-color: rgb(246, 63, 63);
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu{
+    display: none
+}
+
+#menu{
+    font-size: 60px;
+    z-index: 101;
+    cursor: pointer;
+}
+
+#check-menu{
+    display: none;
+}
+
+.menu-icono{
+    display: none;
+}
+
+.navbar{
+    display: flex;
+    margin: 0px;
+    padding: 20px;
+    padding-left: 150px;
+}
+
+.navbar li{
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px;
+    margin-left: 50px;
+    border-radius: 5%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.navbar li:hover{
+    transition: all 0.5s;
+    background-color: rgb(3, 3, 3);
+    text-shadow: left 10px;
+    transform: translateX(8px);
+}
+
+
+.carga-notas {
+    padding-top: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; 
+}
+
+.carga-notas h2 {
+    color: black;
+}
+
+.form-notas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+    background-color: #f8f8f8;
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin-top: 50px; 
+    margin-bottom:25px;
+}
+
+.form-notas label {
+    font-weight: bold;
+    color: black;
+    text-align: left;
+}
+
+.form-notas input, .form-notas select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: black;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.save-button, .cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.save-button {
+    background-color: #4CAF50;
+}
+
+.save-button:hover {
+    background-color: #297a2c;
+}
+
+.cancel-button {
+    background-color: #f44336;
+}
+
+.cancel-button:hover {
+    background-color: #a8281e;
+}
+
+
+.pie-de-pagina {
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 50px 0;
+}
+
+.pie-de-pagina h1 {
+    text-align: center;
+}
+
+.redes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+
+@media (max-width: 992px) {
+    .menu-icono { display: block; }
+    #menu { display: block; padding-left: 50%; }
+    .navbar { display: none; }
+    section { padding: 0 3%; }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: rgba(40, 20, 119, 0.601);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all 1s ease;
+    }
+    .navbar a { margin: 7px 0px; } 
+    #check-menu:checked + label.menu-icono + ul { right: 0; }
+    .form-notas { width: 90%; }
+}

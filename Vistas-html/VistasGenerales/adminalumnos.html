@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cursos</title>
+    <link rel="stylesheet" href="adminalumnos.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="adminalumnos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+        <img src="Imagenes/Logo.png" alt="Logo Colegio guevara">
+        <input type="checkbox" name="checkbox" id="check-menu">
+        <label for="check-menu" class="menu-icono"><div class="ri-menu-fold-line" id="menu"></div></label>
+        
+        <nav>
+            <ul class="navbar">
+                <li><a href="#">Volver</a></li>
+                <li><a href="#">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<section class="administracion">
+    <h2>Panel de Administración</h2>
+
+    <div class="barra-acciones">
+        <input type="text" placeholder="Buscar cursos o alumnos">
+        <div id="agregar">
+            <button class="boton-agregar">Agregar</button>
+        </div>
+    </div>
+
+
+    <div class="pestañas">
+        <button class="boton-pestaña activo" onclick="mostrarPestaña('cursos')">Cursos</button>
+        <button class="boton-pestaña" onclick="mostrarPestaña('alumnos')">Alumnos</button>
+    </div>
+
+    <div id="cursos" class="contenido-pestaña">
+        <div class="tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Curso</th>
+                        <th>Alumnos</th>
+                        <th>Queres..</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button class="boton-editar">Editar</button>
+                            <button class="boton-eliminar">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button class="boton-editar">Editar</button>
+                            <button class="boton-eliminar">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="alumnos" class="contenido-pestaña">
+        <div class="tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre del Alumno</th>
+                        <th>Curso</th>
+                        <th>Queres..</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button class="boton-editar">Editar</button>
+                            <button class="boton-eliminar">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button class="boton-editar">Editar</button>
+                            <button class="boton-eliminar">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<script>
+function mostrarPestaña(pestaña) {
+    // Ocultar todas las pestañas
+    document.querySelectorAll('.contenido-pestaña').forEach(function(contenido) {
+        contenido.style.display = 'none';
+    });
+
+    // Mostrar la pestaña seleccionada
+    document.getElementById(pestaña).style.display = 'block';
+
+    // Quitar la clase activo de todos los botones
+    document.querySelectorAll('.boton-pestaña').forEach(function(boton) {
+        boton.classList.remove('activo');
+    });
+
+    // Agregar la clase activo al botón que fue clickeado
+    event.currentTarget.classList.add('activo');
+}
+
+// Inicializar mostrando solo la pestaña de cursos
+document.addEventListener('DOMContentLoaded', function() {
+    mostrarPestaña('cursos');
+});
+</script>
+
+<footer class="pie-de-pagina">
+    <h1>Contacto</h1>
+    <div class="redes">
+        <div>
+            <p><strong>Escuela</strong></p>
+            <p><i class="ri-facebook-fill"></i> <a href="https://www.facebook.com/colegioguevara/?locale=es_LA" target="_blank">Colegio Guevara</a></p>
+            <p><i class="ri-phone-fill"></i> 2964-30-0532</p>
+        </div>
+        <div>
+            <p><strong>Empresa:</strong></p>
+            <p><i class="ri-mail-fill"></i> <a href="mailto:victustechnologies20@gmail.com">victustechnologies20@gmail.com</a></p>
+            <p><i class="ri-instagram-fill"></i> <a href="#" target="_blank">VictusTechnologies2025</a></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
