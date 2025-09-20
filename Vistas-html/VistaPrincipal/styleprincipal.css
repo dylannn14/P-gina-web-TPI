@@ -18,6 +18,15 @@ body {
     z-index: 100;
 }
 
+.lista-hero .lista li{
+    color: black;
+    padding: 10px;
+}
+
+.lista{
+    padding-top: 15px;
+}
+
 header {
     background-color: rgb(246, 63, 63);
     font-size: 25px;
