@@ -28,6 +28,10 @@ header {
     justify-content: space-between;
 }
 
+.logo{
+    width: 70px;
+    height: 70px;
+}
 #menu{
     display: none
 }

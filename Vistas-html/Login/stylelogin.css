@@ -23,6 +23,11 @@ header {
 
 }
 
+
+.logo{
+    width: 70px;
+    height: 70px;
+}
 #menu{
     display: none
     

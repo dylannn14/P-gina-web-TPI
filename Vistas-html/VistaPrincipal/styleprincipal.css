@@ -18,6 +18,11 @@ body {
     z-index: 100;
 }
 
+
+.logo{
+    width: 70px;
+    height: 70px;
+}
 .lista-hero .lista li{
     color: black;
     padding: 10px;

@@ -23,6 +23,11 @@ header {
     justify-content: space-between; /*hace que los elementos se coloquen en las dos puntas de la pagina */ 
 }
 
+
+.logo{
+    width: 70px;
+    height: 70px;
+}
 #menu{
     display: none
     
