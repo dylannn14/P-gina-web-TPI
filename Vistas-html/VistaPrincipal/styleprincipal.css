@@ -126,11 +126,18 @@ section {
 
 }
 
-.hero-img img {
-    max-width: 200%;
+.hero-img img{ 
+    width: 500px;
+    margin: 10% 0 0 10%;
     height: auto;
     display: block;
-    margin: 0 auto;
+    transition: all 1s linear;
+    border-radius: 10px;
+}
+
+.hero-img img:hover{
+    width: 550px;
+    opacity: 0.6;
 }
 
 .pie-de-pagina {
