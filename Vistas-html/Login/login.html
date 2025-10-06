@@ -97,19 +97,19 @@
 
             if (role === "admin") {
                 if (specialCode === ADMIN_CODE) {
-                    window.location.href = "admin.html"; // redirige a vista admin
+                    window.location.href = "../Admin/admin.html"; // redirige a vista admin
                 } else {
                     alert("Código de administrador incorrecto.");
                 }
             } else if (role === "alumnado") {
                 if (specialCode === ALUMNADO_CODE) {
-                    window.location.href = "alumnado.html"; // redirige a vista alumnado
+                    window.location.href = "../DepartamentoAlumnado/Departamento.html"; // redirige a vista alumnado
                 } else {
                     alert("Código de departamento de alumnado incorrecto.");
                 }
             } else {
                 // alumno normal
-                window.location.href = "alumno.html"; // redirige a vista de alumno
+                window.location.href = "../Alumno/alumno.html"; // redirige a vista de alumno
             }
         });
     });
