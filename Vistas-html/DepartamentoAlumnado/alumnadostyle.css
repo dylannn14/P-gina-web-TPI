@@ -131,17 +131,19 @@ section {
     width: 550px;
     opacity: 0.6;
 }
+
+
 .pie-de-pagina {
     background-color: black;
     color: white;
     width: 100%;
     padding: 50px 0;
-
 }
 
-.pie-de-pagina h1{
+.pie-de-pagina h1 {
     text-align: center;
 }
+
 .redes {
     display: grid;
     grid-template-columns: 1fr 1fr;

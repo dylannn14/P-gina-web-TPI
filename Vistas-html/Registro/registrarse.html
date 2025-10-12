@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login con roles</title>
-    <link rel="stylesheet" href="registrarsestyle.css">
+    <title>registro</title>
+    <link rel="stylesheet" href="/Registro/registrarsestyle.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
 </head>
 <body>
     
     <!-- Cabecera -->
     <header>
-        <img class="logo" src="../../Imagenes/Logo.jpeg" alt="Logo Colegio guevara">
+        <img src="/logo.jpeg" alt="Logo" width="100">
         <input type="checkbox" id="check-menu">
         <label for="check-menu" class="menu-icono">
             <div class="ri-menu-fold-line" id="menu"></div>
@@ -26,89 +26,45 @@
 
 
     <!-- Formulario -->
-    <form id="Tickets" method="post">
-        <div class="formulario">
-            <input class="caja" id="Nombre" placeholder="Nombre" type="text" required>
-            <input class="caja" id="Apellido" placeholder="Apellido" type="text" required>
-            <input class="caja" id="Email" placeholder="Email" type="text" required>
-            <input class="caja" id="Contraseña" placeholder="Contraseña" type="password" required>
-
+<form id="Tickets" action="/validar" method="post">
+<div class="formulario">
+    <input class="caja" name="nombre" id="nombre" placeholder="Nombre" type="text" required>
+    <input class="caja" name="apellido" id="apellido" placeholder="Apellido" type="text" required>
+    <input class="caja" name="correo" id="correo" placeholder="Email" type="email" required>
+    <input class="caja" name="pass" id="pass" placeholder="Contraseña" type="password" required>
 
     <div class="rol-selection">
-        <label><input type="radio" name="rol" value="user" checked> Registrarse como alumno</label>
-        <label><input type="radio" name="rol" value="alumnado"> Registrarse como departamento de alumnado</label>
-        <label><input type="radio" name="rol" value="admin"> Registrarse como administrador</label>
+    <label><input type="radio" name="rol" value="user" checked> Registrarse como alumno</label>
+    <label><input type="radio" name="rol" value="alumnado"> Registrarse como departamento de alumnado</label>
+    <label><input type="radio" name="rol" value="admin"> Registrarse como administrador</label>
     </div>
 
+    <!-- Campo oculto para el código -->
+    <div id="special-code-wrapper" class="codigo-de-acceso" style="display:none;">
+    <input class="caja" id="special-code" name="special-code" placeholder="Código especial" type="password">
+    </div>
 
-            <!-- Campo oculto para el código -->
-            <div id="special-code-wrapper" class="codigo-de-acceso">
-                <input class="caja" id="special-code" placeholder="Código especial" type="password">
-            </div>
+    <button class="boton" type="submit" value="registrar">Enviar Datos</button>
+</div>
+</form>
 
-            <button class="boton" type="submit">Enviar Datos</button>
+<!-- Pie de página -->
+<footer class="pie-de-pagina">
+    <h1>Contacto</h1>
+    <div class="redes">
+        <div class="info-colegio">
+            <p><strong>Escuela</strong></p>
+            <p><i class="ri-facebook-fill"></i> <a href="https://www.facebook.com/colegioguevara/?locale=es_LA" target="_blank">Colegio Guevara</a></p>
+            <p><i class="ri-phone-fill"></i> 2964-30-0532</p>
         </div>
-    </form>
-
-    <footer class="pie-de-pagina">
-        <h1>(Todo con iconos)</h1>
-        <div class="redes">
-            <p>Redes sociales <br> del colegio</p>
-            <p>Redes sociales <br> de mi empresa</p>
+        <div class="info-empresa">
+            <p><strong>Empresa:</strong></p>
+            <p><i class="ri-mail-fill"></i> <a href="mailto:contacto@miempresa.com">victustechnologies20@gmail.com</a></p>
+            <p><i class="ri-instagram-fill"></i> <a href="#" target="_blank">VictusTechnologies2025</a></p>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const radios = document.querySelectorAll('input[name="rol"]');
-        const codeWrapper = document.getElementById('special-code-wrapper');
-        const form = document.getElementById('Tickets');
 
-        // Ocultar al inicio
-        codeWrapper.style.display = "none";
-
-        // Mostrar solo si el rol necesita código
-        radios.forEach(r => r.addEventListener('change', () => {
-            const selectedRole = document.querySelector('input[name="rol"]:checked').value;
-            codeWrapper.style.display = (selectedRole === 'admin' || selectedRole === 'alumnado')
-                ? 'block'
-                : 'none';
-        }));
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const role = document.querySelector('input[name="rol"]:checked').value;
-            const email = document.getElementById('Email').value.trim();
-            const password = document.getElementById('Contraseña').value;
-            const specialCode = document.getElementById('special-code').value;
-
-            if (!email || !password) {
-                alert('Completa email y contraseña.');
-                return;
-            }
-
-            // Códigos especiales 
-            const ADMIN_CODE = "admin";
-            const ALUMNADO_CODE = "alumnado";
-
-            if (role === "admin") {
-                if (specialCode === ADMIN_CODE) {
-                    window.location.href = "admin.html"; // redirige a vista admin
-                } else {
-                    alert("Código de administrador incorrecto.");
-                }
-            } else if (role === "alumnado") {
-                if (specialCode === ALUMNADO_CODE) {
-                    window.location.href = "alumnado.html"; // redirige a vista alumnado
-                } else {
-                    alert("Código de departamento de alumnado incorrecto.");
-                }
-            } else {
-                // alumno normal
-                window.location.href = "alumno.html"; // redirige a vista de alumno
-            }
-        });
-    });
-    </script>
 </body>
 </html>

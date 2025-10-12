@@ -207,8 +207,9 @@ table tr:nth-child(even) {
     padding: 50px 0;
 }
 
-
-.pie-de-pagina h1 { text-align: center; }
+.pie-de-pagina h1 {
+    text-align: center;
+}
 
 .redes {
     display: grid;
